@@ -9,7 +9,7 @@ export default function FinalScore() {
 
   const score = useSelector((state)=>state.quiz.score)
 
-  toast(`Congratulation!, your score is: ${score}`);
+
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -19,12 +19,15 @@ export default function FinalScore() {
   } = useSelector(state=>state.quiz);
 
   useEffect(() => {
+
     if(question_categories === ""){
       dispatch(reset());
       navigate('/')
     }
+
   }, [navigate,question_categories,dispatch]);
 
+  toast.success(`Final Score: ${score}`);
 
   const handleClickBack = () =>{
     dispatch(reset());
