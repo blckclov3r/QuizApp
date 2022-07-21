@@ -1,5 +1,6 @@
-# QuizApp Redux RTK
-Demo: https://quizapprtk.netlify.app
+# QuizApp Redux RTK 
+Demo: https://quizapprtk.netlify.app <br/>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0f1489d1-623e-4c0e-a91a-df883182cfa6/deploy-status)](https://app.netlify.com/sites/clov3r/deploys)
 <br/>
 
 ![quizapp](https://user-images.githubusercontent.com/43292234/180235137-50ba8880-61e8-42d7-8c3f-cfb5813c23b1.PNG)
