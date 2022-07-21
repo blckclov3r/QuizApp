@@ -1,7 +1,6 @@
 import {Typography, Box,Button, CircularProgress } from '@mui/material'
 import SelectField from '../components/SelectField'
 import TextFieldComp from '../components/TextFieldComp';
-import { useAxios } from '../hooks/useAxios';
 import {useNavigate} from 'react-router-dom';
 
 import {useSelector} from 'react-redux';
@@ -15,11 +14,10 @@ export default function Settings() {
         question_categories,
         question_difficulty,
         question_type,
-        amount_of_question,
         status
       } = useSelector(state=>state.quiz);
 
-    const selectEmpty = [question_categories,question_difficulty,question_type,amount_of_question].every(Boolean)
+    const selectEmpty = [question_categories,question_difficulty,question_type].every(Boolean)
 
     const navigate = useNavigate();
 
@@ -31,7 +29,7 @@ export default function Settings() {
   
    if(status === 'loading'){
     return (
-        <Box mt={10}>
+        <Box mt={30}>
             <CircularProgress />
         </Box>
     )

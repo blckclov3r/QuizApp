@@ -20,10 +20,8 @@ export const useAxios = ({url}) =>{
                 setLoading(false)
             });
 
-            if(res?.status === 200){
-                setLoading(false)
-                setResponse(res?.data)
-            }
+            setLoading(false)
+            setResponse(res?.data)
    
         }
         fetchData();
