@@ -6,6 +6,7 @@ import { reset, setScore } from '../features/quiz/quizSlice';
 import {decode} from 'html-entities';
 import {useQuery} from 'react-query'
 import axios from 'axios'
+import {  toast } from 'react-toastify';
 
 
 // random integer not beyond in (max) parameter
@@ -58,7 +59,7 @@ export default function Questions() {
     });
  
     
-    let options = response?.results[questionIndex]?.incorrect_answers
+    let options = response?.results[questionIndex]?.incorrect_answers;
     options?.splice(getRandomInt(options.length),0,response?.results[questionIndex]?.correct_answer) 
  
   if(loading){
@@ -84,12 +85,17 @@ export default function Questions() {
     )
    }
 
-   const handleClickAnswer = (e) =>{
 
+   const handleClickAnswer = (e) =>{
+   
+ 
          const question = response?.results[questionIndex];
-        // console.log('correct answer: ',question?.correct_answer)
+        //  console.log('correct answer: ',question?.correct_answer)
         if(e.target.textContent === question?.correct_answer){
+            toast("CORRECT!");
             dispatch(setScore(1))
+        }else{
+            toast.error("WRONG!");
         }
 
         if(questionIndex + 1 < response?.results.length){
@@ -107,6 +113,7 @@ export default function Questions() {
     )
    }
   return (
+ 
     <Box>
         <Typography variant="h4" color="initial">Question {questionIndex +1}</Typography>
         <Typography variant="body1" color="initial" mt={5}>{
@@ -116,7 +123,7 @@ export default function Questions() {
             options?.map((answer,index)=>(
                 <Box mt={3} key={[answer,index]}>
                     <Button variant='contained' onClick={handleClickAnswer}>{
-                       answer
+                       typeof answer === 'string' ? decode(answer) : answer
                     }</Button>
                 </Box>
             ))
@@ -125,5 +132,7 @@ export default function Questions() {
             Score: {score} / {response?.results?.length}
         </Box>
     </Box>
+ 
+ 
   )
 }

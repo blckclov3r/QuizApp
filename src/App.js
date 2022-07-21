@@ -5,6 +5,8 @@ import Settings from './pages/Settings';
 import FinalScore from './pages/FinalScore';
 import {Container,Box} from '@mui/material'
 import Header from './components/Header';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <BrowserRouter>
@@ -19,6 +21,7 @@ function App() {
         </Routes>
       </Box>
       </Container>
+      <ToastContainer />
     </BrowserRouter>
   );
 }
