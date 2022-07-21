@@ -1,3 +1,33 @@
+# QuizApp Redux RTK
+Demo: https://quizapprtk.netlify.app
+<br/>
+
+![quizapp](https://user-images.githubusercontent.com/43292234/180235137-50ba8880-61e8-42d7-8c3f-cfb5813c23b1.PNG)
+<br/>
+## Dependencies
+ "dependencies":  <br/>
+    "@emotion/react": "^11.9.3", <br/>
+    "@emotion/styled": "^11.9.3", <br/>
+    "@mui/icons-material": "^5.8.4", <br/>
+    "@mui/material": "^5.9.1", <br/>
+    "@reduxjs/toolkit": "^1.8.3", <br/>
+    "@testing-library/jest-dom": "^5.16.4", <br/>
+    "@testing-library/react": "^13.3.0", <br/>
+    "@testing-library/user-event": "^13.5.0", <br/>
+    "axios": "^0.27.2", <br/>
+    "html-entities": "^2.3.3", <br/>
+    "react": "^18.2.0", <br/>
+    "react-dom": "^18.2.0", <br/>
+    "react-query": "^4.0.0", <br/>
+    "react-redux": "^8.0.2", <br/>
+    "react-router-dom": "^6.3.0",{ <br/>
+    "react-scripts": "5.0.1", <br/>
+    "react-toastify": "^9.0.7", <br/>
+    "web-vitals": "^2.1.4" <br/>
+  } <br/>
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +98,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## License
+* [MIT](LICENSE)
+
+
+
