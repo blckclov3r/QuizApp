@@ -7,15 +7,24 @@ axios.defaults.baseURL = "https://opentdb.com/";
 export const useAxios = ({url}) =>{
     const [response, setResponse] = useState(null);
     const [error,setError] = useState("");
-    const [loading,setLoading] = useState(true);
+    const [loading,setLoading] = useState(false);
 
     useEffect( ()=>{
+        setLoading(true)
         const fetchData = async ()=>{
+        
            const res = await axios.get(url)
-            .catch(err=> setError(err))
-            .finally(()=>setLoading(false))
-            console.log(res?.data)
-            setResponse(res?.data)
+            .catch(err=> {
+                console.log('fetchData',err)
+                setError(err);
+                setLoading(false)
+            });
+
+            if(res?.status === 200){
+                setLoading(false)
+                setResponse(res?.data)
+            }
+   
         }
         fetchData();
     },[url])

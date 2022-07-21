@@ -4,9 +4,11 @@ import Questions from './pages/Questions';
 import Settings from './pages/Settings';
 import FinalScore from './pages/FinalScore';
 import {Container,Box} from '@mui/material'
+import Header from './components/Header';
 function App() {
   return (
     <BrowserRouter>
+      <Header />
       <Container maxWidth="sm">
       <Box textAlign={"center"} mt={5}>
         <Routes>

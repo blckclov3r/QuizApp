@@ -1,8 +1,14 @@
 import React from 'react'
-import {Box, FormControl, TextField} from '@mui/material'
-export default function TextFieldComp() {
-    const handleChange = () => {
+import {Box, FormControl, TextField} from '@mui/material';
+import {useDispatch} from 'react-redux';
+import { setAmount } from '../features/quiz/quizSlice';
 
+export default function TextFieldComp() {
+ 
+    const dispatch = useDispatch();
+
+    const handleChange = (e) => {
+        dispatch(setAmount(e.target.value))
     }
   return (
     <Box mt={3} width="100%">
